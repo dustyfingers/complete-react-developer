@@ -5,15 +5,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      string: "REACT APP BABY"
+      monsters: [
+        {
+          name: 'Frankenstein'
+        },
+        {
+          name: 'Dracula'
+        },
+        {
+          name: 'Werewolf'
+        },
+        {
+          name: 'Bob'
+        },
+        {
+          name: 'Zombie'
+        }
+      ]
     };
   }
   
   render() {
     return (
       <div className="App">
-        <p>{this.state.string}</p>
-        <button onClick={() => this.setState({string: 'HELLO LOUIE'})}>CHANGE TEXT</button>
+        {this.state.monsters.map((monster, key) => <h1 key={key}>{ monster.name }</h1>)}
       </div>
     );
   }
